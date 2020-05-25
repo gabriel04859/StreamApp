@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Activity.DetalhesAnimeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewCover"
+            android:layout_width="match_parent"
+            android:layout_height="245dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/slide01"
+            />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/gradient_fundo"
+            android:layout_alignBottom="@id/imageViewCover"/>
+
+        <TextView
+            android:id="@+id/txtNomeDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageView3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="-33dp"
+            android:layout_toRightOf="@id/imageViewDetalhes"
+            android:text="@string/nome"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/imageViewDetalhes"
+            android:layout_width="125dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            android:transitionName="sharedName" />
+
+
+
+        <TextView
+            android:id="@+id/textViewDescricaoDetalhes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brancoPadrao"
+            android:lineSpacingExtra="8dp"
+            android:layout_below="@id/imageViewDetalhes"
+            android:layout_margin="16dp"
+            android:text="Descrição Descrição Descrição Descrição DescriçãovDescrição
+        DescriçãoDescriçãoDescriçãoDescriçãoDescriçãoDescriçãoDescriçãoDescrição
+        DescriçãoDescrição" />
+
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

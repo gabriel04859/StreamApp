@@ -1,29 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
-
-    <androidx.viewpager.widget.ViewPager
-
-        android:id="@+id/slidePagerMain"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="275dp" />
+        android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabMain"
-        app:tabBackground="@drawable/indicator_selector"
-        app:tabIndicatorHeight="0dp"
-        android:layout_below="@+id/slidePagerMain"
-        app:tabIndicatorColor="#f1b814"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabGravity="center">
+        <androidx.viewpager.widget.ViewPager
+
+            android:id="@+id/slidePagerMain"
+            android:layout_width="match_parent"
+            android:layout_height="275dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabMain"
+            app:tabBackground="@drawable/indicator_selector"
+            app:tabIndicatorHeight="0dp"
+            android:layout_below="@+id/slidePagerMain"
+            app:tabIndicatorColor="#f1b814"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="center">
 
 
-    </com.google.android.material.tabs.TabLayout>
-</RelativeLayout>
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/txtMaisVistos"
+            android:layout_below="@id/tabMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Populares"
+            android:textColor="@color/brancoPadrao"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMaisVistos"
+            tools:listitem="@layout/row_recycler_mais_vistos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@id/txtMaisVistos"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:id="@+id/txtAnimesTemporada"
+            android:layout_below="@id/recyclerViewMaisVistos"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animes da Temporada"
+            android:textColor="@color/brancoPadrao"
+            android:layout_marginLeft="16dp"
+
+            android:layout_marginBottom="8dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAnimesTemporada"
+            tools:listitem="@layout/row_recycler_temporada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@id/txtAnimesTemporada"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
